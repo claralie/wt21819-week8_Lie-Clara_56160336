@@ -1,0 +1,78 @@
+<h1>Student Detail</h1>
+<form (ngSubmit)="submit2()" [formGroup]="myReactiveForm">
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" formControlName="nama"/>
+    </div>
+  </div>
+  <div class="alert alert-warning" role="alert" *ngIf="nama.errors?.required && nama.touched">
+    Name is required
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Faculty:</label>
+    <div class="col-sm-10">
+        <select class='form-control' formControlName="faculty">
+            <option value='binus'>Binus</option>
+            <option value='kkg'>Kwik Kian Gie</option>
+        </select>
+    </div>
+  </div>
+  <div class="alert alert-warning" role="alert" *ngIf="faculty.errors?.required && faculty.touched">
+    Faculty is required
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">NIM:</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" formControlName="nim"/>
+    </div>
+  </div>
+  <div class="alert alert-warning" role="alert" *ngIf="nim.errors?.required && nim.touched">
+    NIM is required
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Entry Date:</label>
+    <div class="col-sm-10">
+      <input type="date" [(ngModel)]="date" name="date">
+    </div>
+  </div>
+  <div class="alert alert-warning" role="alert" *ngIf="date.errors?.required && date.touched">
+    Entry date is required
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Birth Date:</label>
+    <div class="col-sm-10">
+      <input type="date" [(ngModel)]="date" name="date">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Address:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Notes:</label>
+    <div class="col-sm-10">
+      <textarea rows="4" cols="50"></textarea>
+    </div>
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Phone:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control"/>
+      </div>
+    </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Email:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" formControlName="email"/>
+    </div>
+  </div>
+  <div class="alert alert-warning" role="alert" *ngIf="email.errors?.required && email.touched">
+    Email is required
+  </div>
+  <div class="alert alert-warning" role="alert" *ngIf="email.errors?.email && email.touched">
+    Email is invalid
+  </div>
+</form>
